@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="/webjars/bootstrap/5.1.3/css/bootstrap.css">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-info-emphasis">
+  <div class="container-fluid">
+   <!-- <a class="navbar-brand" href="#">Navbar</a>-->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-warning" aria-current="page" th:href="@{/}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-warning" th:href="@{/registerForm}">Add Candidate</a>
+        </li>
+
+
+      </ul>
+     <!-- <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>-->
+    </div>
+  </div>
+</nav>
+
+
+
+<br>
+
+<!-- Button trigger modal -->
+
+<div class="container">
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th >#</th>
+      <th>first name</th>
+      <th>last name</th>
+      <th>address</th>
+      <th>candname</th>
+      <th>candposition</th>
+      <th>candparty</th>
+      <th>       </th>
+
+
+
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="vote :${voterList}">
+
+      <td th:text="${vote.voterid}"></td>
+      <td th:text="${vote.fname}"></td>
+      <td th:text="${vote.lname}"></td>
+      <td th:text="${vote.address}"></td>
+      <td th:text="${vote.candname}"></td>
+      <td th:text="${vote.candposition}"></td>
+      <td th:text="${vote.candparty}"></td>
+      <td>
+        <a class="h4 mr-3" >Edit</a>
+        <a class="h4" >Delete</a>
+      </td>
+
+
+
+
+
+
+
+    </tr>
+
+    </tbody>
+  </table>
+
+</div>
+<!-- table -->
+
+
+<script src="/webjars/jquery/3.5.1/dist/jquery.min.js"></script>
+<script src="/webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<script src="/main.js" th:src="@{/main.js}"></script>
+</body>
+</html>
+
